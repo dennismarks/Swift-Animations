@@ -12,19 +12,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var colourArray = ["blue", "cyan", "yellow"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
     }
     
-    var openingFrame: CGRect?
     
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let presentationAnimator = ExpandAnimator.animator
-        
-    }
-
-
+    
 }
-
