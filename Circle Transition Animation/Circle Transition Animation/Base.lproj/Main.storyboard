@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Circle_Transition_Animation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMW-wN-RfO">
+                                <rect key="frame" x="149.5" y="429.5" width="115" height="37"/>
+                                <color key="backgroundColor" red="0.42745098040000001" green="0.62745098040000002" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="4" maxX="10" maxY="4"/>
+                                <state key="normal" title="BUTTON">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oxq-jX-LZH" kind="custom" identifier="goToSecond" customClass="CircleSegue" customModule="Circle_Transition_Animation" customModuleProvider="target" id="Ry6-mY-V8u"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqq-dW-EGl">
+                                <rect key="frame" x="20" y="349.5" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.68655608099999998" green="0.81780699700000004" blue="0.89516141319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="lqq-dW-EGl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fno-O0-Twc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lqq-dW-EGl" secondAttribute="trailing" constant="20" id="Gx5-R5-hKu"/>
+                            <constraint firstItem="vMW-wN-RfO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LxK-sx-8tO"/>
+                            <constraint firstItem="vMW-wN-RfO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oXa-eX-Taa"/>
+                            <constraint firstItem="vMW-wN-RfO" firstAttribute="top" secondItem="lqq-dW-EGl" secondAttribute="bottom" constant="80" id="uF8-uP-dxJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="vMW-wN-RfO" id="2H2-Cy-Rx7"/>
+                        <outlet property="label" destination="lqq-dW-EGl" id="sqB-Dg-jsf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="XU6-Tn-Drl">
+            <objects>
+                <viewController id="oxq-jX-LZH" customClass="SecondViewController" customModule="Circle_Transition_Animation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ozn-Ud-SaS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhD-nv-pkH">
+                                <rect key="frame" x="160" y="428.5" width="94" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="GO BACK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="oxq-jX-LZH" eventType="touchUpInside" id="OCy-xT-iBf"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mKq-yD-cxE">
+                                <rect key="frame" x="100" y="318.5" width="214" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IhD-nv-pkH" firstAttribute="top" secondItem="mKq-yD-cxE" secondAttribute="bottom" constant="80" id="DZE-Zg-48H"/>
+                            <constraint firstItem="7ci-E3-jYx" firstAttribute="trailing" secondItem="mKq-yD-cxE" secondAttribute="trailing" constant="100" id="Enk-Af-Mok"/>
+                            <constraint firstItem="mKq-yD-cxE" firstAttribute="leading" secondItem="7ci-E3-jYx" secondAttribute="leading" constant="100" id="PKW-m8-bau"/>
+                            <constraint firstItem="IhD-nv-pkH" firstAttribute="centerX" secondItem="Ozn-Ud-SaS" secondAttribute="centerX" id="U2l-MW-6dx"/>
+                            <constraint firstItem="IhD-nv-pkH" firstAttribute="centerY" secondItem="Ozn-Ud-SaS" secondAttribute="centerY" id="d7T-pX-pyd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7ci-E3-jYx"/>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="mKq-yD-cxE" id="qQ9-dZ-iJQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fen-ym-97O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901" y="21"/>
+        </scene>
+    </scenes>
+</document>
