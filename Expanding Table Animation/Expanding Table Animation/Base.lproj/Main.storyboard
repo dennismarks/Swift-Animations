@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Kb-U4-lm7">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="boQ-GZ-9ve">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="boQ-GZ-9ve">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -41,10 +41,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0Kb-U4-lm7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6jB-1d-XMQ"/>
-                            <constraint firstItem="0Kb-U4-lm7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QSP-vD-mr5"/>
-                            <constraint firstItem="0Kb-U4-lm7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jQP-a2-iid"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Kb-U4-lm7" secondAttribute="trailing" constant="20" id="k9h-Vd-iGr"/>
+                            <constraint firstItem="0Kb-U4-lm7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4O6-0Z-69G"/>
+                            <constraint firstItem="0Kb-U4-lm7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8iE-c2-4bs"/>
+                            <constraint firstAttribute="bottom" secondItem="0Kb-U4-lm7" secondAttribute="bottom" id="CoX-zY-bnQ"/>
+                            <constraint firstItem="0Kb-U4-lm7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vuj-I7-6Yu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

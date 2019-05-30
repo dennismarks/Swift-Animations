@@ -17,7 +17,7 @@ class ExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     let presentDuration = 0.4
-    let dismissDuration = 0.15
+    let dismissDuration = 0.2
     
     var openingFrame: CGRect?
     var transitionMode: ExpandTransitionMode = .Present

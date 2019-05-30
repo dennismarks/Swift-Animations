@@ -13,6 +13,7 @@
 		84947E1022A03F9600137FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84947E0F22A03F9600137FC7 /* Assets.xcassets */; };
 		84947E1322A03F9600137FC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84947E1122A03F9600137FC7 /* LaunchScreen.storyboard */; };
 		84947E1B22A0420E00137FC7 /* ExpandAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84947E1A22A0420E00137FC7 /* ExpandAnimator.swift */; };
+		84947E1D22A0956E00137FC7 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84947E1C22A0956E00137FC7 /* ExpandedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		84947E1222A03F9600137FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84947E1422A03F9600137FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84947E1A22A0420E00137FC7 /* ExpandAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandAnimator.swift; sourceTree = "<group>"; };
+		84947E1C22A0956E00137FC7 /* ExpandedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				84947E0822A03F9500137FC7 /* AppDelegate.swift */,
 				84947E0A22A03F9500137FC7 /* ViewController.swift */,
+				84947E1C22A0956E00137FC7 /* ExpandedViewController.swift */,
 				84947E1A22A0420E00137FC7 /* ExpandAnimator.swift */,
 				84947E0C22A03F9500137FC7 /* Main.storyboard */,
 				84947E0F22A03F9600137FC7 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				84947E0B22A03F9500137FC7 /* ViewController.swift in Sources */,
 				84947E1B22A0420E00137FC7 /* ExpandAnimator.swift in Sources */,
 				84947E0922A03F9500137FC7 /* AppDelegate.swift in Sources */,
+				84947E1D22A0956E00137FC7 /* ExpandedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
