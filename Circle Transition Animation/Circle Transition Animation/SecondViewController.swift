@@ -24,7 +24,13 @@ class SecondViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         let newText = textField.text!
         delagate?.userEnteredNewLabelName(name: newText)
-        self.dismiss(animated: true, completion: nil)
+        let transition: CATransition = CATransition()
+        transition.duration = 1.0
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.fade
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
 }
