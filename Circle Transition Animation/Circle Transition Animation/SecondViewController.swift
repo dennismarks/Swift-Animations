@@ -16,9 +16,11 @@ class SecondViewController: UIViewController {
     
     var delagate: LabelUpdateDelegate?
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.button.layer.cornerRadius = 10.0
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
