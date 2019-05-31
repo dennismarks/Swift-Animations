@@ -12,14 +12,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var colourArray = ["blue", "cyan", "yellow", "1", "2", "3", "4", "5"]
-    var colourArray2 = [0xFF0000, 0xFFA500, 0x228B22, 0x98FB98, 0x20B2AA, 0xADD8E6, 0x8A2BE2, 0xFFB6C1]
+    var colourArray = ["#E2C7C0", "#ECDBD8", "#71768A", "#303747", "#191F2F", "#0D1319"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.reloadData()
+        self.collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+        collectionView.frame.origin.x = view.safeAreaInsets.left
+        collectionView.frame.origin.y = view.safeAreaInsets.top
+        collectionView.frame.size.width = view.bounds.width - view.safeAreaInsets.left - view.safeAreaInsets.right
+        collectionView.frame.size.height = view.bounds.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom
     }
     
     var openingFrame: CGRect?
@@ -51,9 +55,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        let colour = colourArray2[indexPath.row]
-        cell.backgroundColor = UIColor(rgb: colour)
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+//        let cell = Bundle.main.loadNibNamed("CollectionViewCell", owner: self, options: nil)?.first as! CollectionViewCell
+        cell.containerView.backgroundColor = hexStringToUIColor(hex: colourArray[indexPath.row])
+        cell.colourLabel.text = colourArray[indexPath.row]
         return cell
     }
     
@@ -69,28 +74,35 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let expandedVC = ExpandedViewController()
         expandedVC.transitioningDelegate = self
         expandedVC.modalPresentationStyle = .custom
-        let colour = colourArray2[indexPath.row]
-        expandedVC.view.backgroundColor = UIColor(rgb: colour)
+        expandedVC.view.backgroundColor = hexStringToUIColor(hex: colourArray[indexPath.row])
         present(expandedVC, animated: true, completion: nil)
     }
     
 }
 
 
-extension UIColor {
-    convenience init(red: Int, green: Int, blue: Int) {
-        assert(red >= 0 && red <= 255, "Invalid red component")
-        assert(green >= 0 && green <= 255, "Invalid green component")
-        assert(blue >= 0 && blue <= 255, "Invalid blue component")
-        
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-    }
+extension ViewController {
     
-    convenience init(rgb: Int) {
-        self.init(
-            red: (rgb >> 16) & 0xFF,
-            green: (rgb >> 8) & 0xFF,
-            blue: rgb & 0xFF
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
         )
     }
+    
 }
